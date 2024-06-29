@@ -186,3 +186,55 @@ function walk() {
 // };
 
 // video.showTags();
+
+// *********************************************
+//changing this keyword
+
+// const video = {
+//   title: "a",
+//   tags: ["a", "b", "c"],
+//   showTags() {
+//     const self = this;
+//     this.tags.forEach(function (tag) {
+//       console.log(self.title, tag);
+//     }, this);
+//   },
+// };
+
+// video.showTags();
+
+// function playVideo(a, b) {
+//   console.log(this);
+// }
+// playVideo.call({ name: "Mosh" }, 1, 2); //change value of this
+// playVideo.apply({ name: "Mosh" }, [1, 2]); //difference between call and apply is only its arguments
+// playVideo.bind({ name: "Mosh" }); // makes this object from playVideo to point to this current object no matter
+
+// playVideo();
+
+// const video = {
+//   title: "a",
+//   tags: ["a", "b", "c"],
+//   showTags() {
+//     this.tags.forEach(
+//       function (tag) {
+//         console.log(this.title, tag);
+//       }.bind(this)
+//     );
+//   },
+// };
+
+// video.showTags();
+
+//arrow functions
+const video = {
+  title: "a",
+  tags: ["a", "b", "c"],
+  showTags() {
+    this.tags.forEach((tag) => {
+      console.log(this.title, tag);
+    });
+  },
+};
+
+video.showTags();
