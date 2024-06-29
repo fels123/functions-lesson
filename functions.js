@@ -37,11 +37,29 @@ function walk() {
 // console.log(sum(1, 2, 3, 4, 5));
 
 //return sum of all the arguments
-function sum() {
-  let total = 0; //using this method we do not need arguments to add numbers
-  for (let value of arguments) total += value;
+// function sum() {
+//   let total = 0; //using this method we do not need arguments to add numbers
+//   for (let value of arguments) total += value;
 
-  console.log(arguments);
-  return total;
+//   console.log(arguments);
+//   return total;
+// }
+// console.log(sum(1, 2, 3, 4, 5));
+
+// ************************************************************
+//REST OPERATOR
+
+// function sum(...args) {
+//   // this is the rest operator
+//   let total = 0;
+//   return args.reduce(a, (b) => a + b); //using reduce method
+// }
+// console.log(sum(1, 2, 3, 4, 5));
+
+function sum(discount, ...prices) {
+  // this is the rest operator
+
+  const total = prices.reduce((a, b) => a + b); //using reduce method
+  return total * (1 - discount);
 }
-console.log(sum(1, 2, 3, 4, 5));
+console.log(sum(0.1, 20, 30));
