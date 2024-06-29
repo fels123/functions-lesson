@@ -56,10 +56,18 @@ function walk() {
 // }
 // console.log(sum(1, 2, 3, 4, 5));
 
-function sum(discount, ...prices) {
-  // this is the rest operator
+// function sum(discount, ...prices) {
+//   // this is the rest operator
 
-  const total = prices.reduce((a, b) => a + b); //using reduce method
-  return total * (1 - discount);
+//   const total = prices.reduce((a, b) => a + b); //using reduce method
+//   return total * (1 - discount);
+// }
+// console.log(sum(0.1, 20, 30));
+
+// *************************************************************************
+// Default parameters
+function interest(principal, rate = 3.5, years = 5) {
+  // if we give a default value for rate we have to give the same for years as well or the result will be NaN
+  return ((principal * rate) / 100) * years;
 }
-console.log(sum(0.1, 20, 30));
+console.log(interest(10000));
