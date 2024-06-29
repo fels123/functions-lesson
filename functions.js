@@ -131,15 +131,30 @@ function walk() {
 
 // *****************************************************************
 //LOCAL AND GLOBAL SCOPE
-const color = "red"; //global scope
-function start() {
-  const message = "hi"; //only accesssible inside this block
-  const color = "blue";
-  console.log(color);
-}
-function stop() {
-  const message = "bye";
-}
-start();
+// const color = "red"; //global scope
+// function start() {
+//   const message = "hi"; //only accesssible inside this block
+//   const color = "blue";
+//   console.log(color);
+// }
+// function stop() {
+//   const message = "bye";
+// }
+// start();
 
-// **************************************************************
+// // **************************************************************
+// // let vs var
+
+// function start() {
+//   for (var i = 0; i < 5; i++) {
+//     // this var is available anywhere inside this funtion
+//     console.log(i);
+//   }
+
+//   console.log(i);
+// }
+
+// start();
+//BOTTOM LINE DO NOT USE VAR THATS IT
+
+// *****************************************************
