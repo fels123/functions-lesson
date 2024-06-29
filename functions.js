@@ -105,26 +105,41 @@ function walk() {
 
 // *************************************************
 //TRY AND CATCH
-const person = {
-  firstName: "John",
-  lastName: "Wick",
+// const person = {
+//   firstName: "John",
+//   lastName: "Wick",
 
-  get fullName() {
-    return `${person.firstName} ${person.lastName}`;
-  },
-  set fullName(value) {
-    if (typeof value !== "string") throw new Error("Value is not a string");
+//   get fullName() {
+//     return `${person.firstName} ${person.lastName}`;
+//   },
+//   set fullName(value) {
+//     if (typeof value !== "string") throw new Error("Value is not a string");
 
-    const parts = value.split(" ");
-    if (parts.length !== 2) throw new Error("Enter a first and last name");
-    this.firstName = parts[0];
-    this.lastName = parts[1];
-  },
-};
-try {
-  person.fullName = null;
-} catch (e) {
-  alert(e);
+//     const parts = value.split(" ");
+//     if (parts.length !== 2) throw new Error("Enter a first and last name");
+//     this.firstName = parts[0];
+//     this.lastName = parts[1];
+//   },
+// };
+// try {
+//   person.fullName = null;
+// } catch (e) {
+//   alert(e);
+// }
+
+// console.log(person);
+
+// *****************************************************************
+//LOCAL AND GLOBAL SCOPE
+const color = "red"; //global scope
+function start() {
+  const message = "hi"; //only accesssible inside this block
+  const color = "blue";
+  console.log(color);
 }
+function stop() {
+  const message = "bye";
+}
+start();
 
-console.log(person);
+// **************************************************************
