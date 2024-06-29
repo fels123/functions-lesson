@@ -66,8 +66,41 @@ function walk() {
 
 // *************************************************************************
 // Default parameters
-function interest(principal, rate = 3.5, years = 5) {
-  // if we give a default value for rate we have to give the same for years as well or the result will be NaN
-  return ((principal * rate) / 100) * years;
-}
-console.log(interest(10000));
+// function interest(principal, rate = 3.5, years = 5) {
+//   // if we give a default value for rate we have to give the same for years as well or the result will be NaN
+//   return ((principal * rate) / 100) * years;
+// }
+// console.log(interest(10000));
+
+// ***********************************
+//GETTERS AND SETTERS METHOD IN JS
+// const person = {
+//   firstName: "John",
+//   lastName: "Wick",
+
+//   fullName() {
+//     return `${person.firstName} ${person.lastName}`;
+//   },
+// };
+// console.log(person.fullName()); //read only
+// console.log(`${person.firstName} ${person.lastName}`);
+
+// getters  to access properties
+// setters to change mutate them
+const person = {
+  firstName: "John",
+  lastName: "Wick",
+
+  get fullName() {
+    return `${person.firstName} ${person.lastName}`;
+  },
+  set fullName(value) {
+    const parts = value.split(" ");
+    this.firstName = parts[0];
+    this.lastName = parts[1];
+  },
+};
+person.fullName = "John smith";
+console.log(person);
+
+// *************************************************
